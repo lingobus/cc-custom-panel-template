@@ -1,0 +1,24 @@
+{
+  "prompts": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "label": "Project name, dash separated words, no space or punctuations"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "label": "Project description",
+      "default": "A Cocos Creator Custom Panel"
+    },
+    "author": {
+      "type": "string",
+      "label": "Author"
+    },
+    "panelTitle": {
+      "type": "string",
+      "label": "Panel title"
+    }
+  },
+  "completeMessage": "Done!"
+}
