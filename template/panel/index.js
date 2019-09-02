@@ -1,20 +1,43 @@
 const { read, pkgName } = require_('utils.js');
 
+const vm = (el) => {
+  return new Vue({
+    el,
+    name: '{{name}}-panel',
+    template: read('panel/panel.html'),
+    data () {
+      return {
+        text: 'hello!'
+      }
+    },
+    created() {
+      if (CC_DEBUG) {
+        window.g = this;
+      }
+    },
+    compiled(){
+
+    },
+    methods: {
+      onConfirm() {
+        Editor.Ipc.sendToMain(`${pkgName}:clicked`);
+      }
+    }
+  })
+};
+
 Editor.Panel.extend({
   style: read('panel/style.css'),
   template: read('panel/index.html'),
   $: {
-    btn: '#btn',
-    text: '#text'
+    root: '#{{name}}-panel'
   },
   ready () {
-    this.$btn.addEventListener('confirm', () => {
-      Editor.Ipc.sendToMain(`${pkgName}:clicked`);
-    });
+    this.vm = vm(this.$root);
   },
   messages: {
     changeText(sender, text) {
-      this.$text.innerHTML = text;
+      this.vm.text = text;
     }
   }
 });

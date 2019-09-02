@@ -20,5 +20,6 @@
       "label": "Panel title"
     }
   },
+  "skipInterpolation": "panel/panel.html",
   "completeMessage": "Done!"
 }
