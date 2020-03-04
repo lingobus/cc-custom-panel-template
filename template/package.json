@@ -20,7 +20,9 @@
     "height": 800
   },
   "profiles": {
-    "docs": "http://docs.cocos.com/creator/manual/zh/",
-    "forum": "http://forum.cocos.com/c/Creator"
+    "project": {
+      "docs": "http://docs.cocos.com/creator/manual/zh/",
+      "forum": "http://forum.cocos.com/c/Creator"
+    }
   }
 }
