@@ -1,3 +1,3 @@
 module.exports={
-  title:'{{name}}面板',
+  title:'{{name}}',
 };
