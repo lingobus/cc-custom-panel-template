@@ -11,9 +11,7 @@ const vm = (el) => {
       }
     },
     created() {
-      if (CC_DEBUG) {
-        window.g = this;
-      }
+        window["{{name}}".replace(/-([a-z])/g, function(all, match){return match[0].toUpperCase()})] = this;
     },
     compiled(){
 
