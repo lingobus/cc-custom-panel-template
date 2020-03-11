@@ -18,7 +18,7 @@ const vm = (el) => {
     },
     methods: {
       $t(key) {
-        return Editor.T(key);
+        return Editor.T("{{name}}." + key);
       },
       onConfirm() {
         Editor.Ipc.sendToMain(`${pkgName}:clicked`);
